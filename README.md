@@ -1,2 +1,2 @@
-# Kodos
-Luyện JavaScript qua app todo list
+# Learn Java
+Luyện Java
