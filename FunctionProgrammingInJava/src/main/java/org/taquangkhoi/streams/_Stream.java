@@ -1,8 +1,9 @@
 package org.taquangkhoi.streams;
 
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.function.ToIntFunction;
-import java.util.stream.Collectors;
+
 
 public class _Stream {
     public static void main(String[] args) {
@@ -16,10 +17,16 @@ public class _Stream {
 
         ToIntFunction<String> length = String::length;
 
-        people.stream()
-                .map(person -> person.name)
-                .mapToInt(length)
-                .forEach(System.out::println);
+//        people.stream()
+//                .map(person -> person.name)
+//                .mapToInt(length)
+//                .forEach(System.out::println);
+
+        Predicate<Person> femalePredicate = person -> Gender.FEMALE.equals(person.gender);
+
+        boolean containsOnlyFemales = people.stream().noneMatch(femalePredicate);
+        System.out.println(containsOnlyFemales);
+        
     }
 
     static class Person {
