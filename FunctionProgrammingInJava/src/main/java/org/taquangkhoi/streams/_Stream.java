@@ -26,7 +26,7 @@ public class _Stream {
 
         boolean containsOnlyFemales = people.stream().noneMatch(femalePredicate);
         System.out.println(containsOnlyFemales);
-        
+
     }
 
     static class Person {
